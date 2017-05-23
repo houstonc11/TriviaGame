@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<title>Trivia Game</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Special+Elite" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="centered-mainbox">
+			<video hidden id="countdown">
+								<source src="assets/movies/countdown.mp4" type="video/mp4">
+							</video>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="jumbotron well">
+							<h2 id="triviaTitle">
+								MOVIE TRIVIA
+							</h2>
+			
+							<button id="startGameButton" class="btn btn-danger btn-large">Start the Game!</button>
+
+							
+
+						<div id="questionPage">	
+							<div id="textTimeRemaining"></div>
+							<p id="secondsLeft"></p>
+							<p id="currentQuestion"></p>
+							<div class="answerButton" id="answer1"></div>
+							<div class="answerButton" id="answer2"></div>
+							<div class="answerButton" id="answer3"></div>
+							<div class="answerButton" id="answer4"></div>				
+							<div id="resultPage"></div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>
+
+
+
+
+
+	<script type="text/javascript">
+	var correctAnswers = 0;
+	var wrongAnswers = 0;	
+	var interval;
+	var number;
+	
+
+	
+
+	$("#startGameButton").on("click", function() {
+		$("#startGameButton").hide();
+		$("#triviaTitle").hide()
+		$(".jumbotron").hide();
+		$("#countdown").show();
+		// $("#countdown").get(0).play();
+		// $("#countdown").on("ended",function(){
+      		$("#countdown").hide();
+      		$(".jumbotron").show();
+      		question1()
+			// });
+	});
+		
+
+
+
+	function question1() {
+		number = 10;
+		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
+		$("#secondsLeft").html(number + " seconds");
+		interval = setInterval(decrement, 1000);
+		console.log(interval);
+
+		
+		
+		$("#textTimeRemaining").html("Time Remaining: ");
+		$("#currentQuestion").html("Which of these Indiana Jones films was the 3rd in the series?");
+		
+		$("#answer1").html("<button>" + "The Last Crusade" + "</button>");
+		$("#answer2").html("<button>" + "Raiders of the Lost Ark" + "</button>");
+		$("#answer3").html("<button>" + "Kingdom of the Crystal Skull" + "</button>");
+		$("#answer4").html("<button>" + "The Temple of Doom" + "</button>");
+
+		$("#answer1").click(function() {
+			
+			correctAnswers++;
+			$("#resultPage").html("That's Right!");
+			stop();
+			setTimeout(question2, 3000);
+			
+		});
+		$("#answer2").click(function() {
+			
+			wrongAnswers++;
+			$("#resultPage").html("WRONG!");
+			stop();
+			setTimeout(question2, 3000);
+		});
+		$("#answer3").click(function() {
+			
+			wrongAnswers++;
+			$("#resultPage").html("WRONG!");
+			stop();
+			setTimeout(question2, 3000);
+		});
+		$("#answer4").click(function() {			
+			wrongAnswers++;
+			$("#resultPage").html("WRONG!");
+			stop();
+			
+			setTimeout(question2, 3000);
+			
+		});
+
+		function decrement() {
+		
+		number--;
+		$("#secondsLeft").html(number + " seconds");
+		console.log(number)
+		
+		if (number == 0 ) {
+			stop();
+			$("#resultPage").html("OUT OF TIME! The answer was Indiana Jones and The last Crusade.");
+			
+			setTimeout(question2, 3000);
+			
+		}
+		
+	}
+
+}
+	
+	
+
+
+
+
+
+	function question2() {
+		number = 10;
+		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
+		$("#resultPage").html("");
+		interval = setInterval(decrement, 1000);
+		$("#secondsLeft").html(number + " seconds");
+		
+		console.log(interval);
+
+
+		
+		$("#textTimeRemaining").html("Time Remaining: ");
+		$("#currentQuestion").html("What is the highest grossing film of all time?")
+		$("#answer1").html("<button>" + "Jurassic Park" + "</button>")
+		$("#answer2").html("<button>" + "Frozen" + "</button>")
+		$("#answer3").html("<button>" + "Avatar" + "</button>")
+		$("#answer4").html("<button>" + "Titanic" + "</button>")
+
+		$("#answer1").click(function() {
+			wrongAnswers++;
+			$("#resultPage").html("WRONG! Avatar is #1, grossing $2.78 billion dollars at the box office in 2009");
+			
+			stop();
+			setTimeout(question3, 3000);
+		});
+		$("#answer2").click(function() {
+			wrongAnswers++;
+			$("#resultPage").html("WRONG! Avatar is #1, grossing $2.78 billion dollars at the box office in 2009");
+			
+			stop();
+			setTimeout(question3, 3000);
+		});
+		$("#answer3").click(function() {
+			correctAnswers++;
+			$("#resultPage").html("Correct! Avatar grossed $2.78 billion dollars at the box office in 2009");
+			
+			stop();
+			setTimeout(question3, 3000);
+			
+		});
+		$("#answer4").click(function() {
+			
+			wrongAnswers++;
+			$("#resultPage").html("WRONG!");
+			stop();
+			setTimeout(question3, 3000);
+			
+		});
+	
+		function decrement() {
+		
+		number--;
+		$("#secondsLeft").html(number + " seconds");
+		console.log(number)
+		
+		if (number == 0 ) {
+			stop();
+			$("#resultPage").html("OUT OF TIME! The answer was Avatar, which grossed $2.78 billion dollars at the box office in 2009");
+			
+			setTimeout(question3, 3000);
+			
+		}
+		
+	}
+
+}
+
+function question3() {
+		number = 10;
+		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
+		$("#resultPage").html("");
+		
+		$("#secondsLeft").html(number + " seconds");
+		interval = setInterval(decrement, 1000);
+		console.log(interval);
+		
+
+
+		
+		$("#textTimeRemaining").html("Time Remaining: ");
+		$("#currentQuestion").html("Which of these James Bond films did NOT star Daniel Craig?")
+		$("#answer1").html("<button>" + "Casino Royale" + "</button>")
+		$("#answer2").html("<button>" + "Skyfall" + "</button>")
+		$("#answer3").html("<button>" + "Golden Eye" + "</button>")
+		$("#answer4").html("<button>" + "Quantum of Solace" + "</button>")
+
+		$("#answer1").click(function() {
+			wrongAnswers++;
+			$("#resultPage").html('WRONG! Golden Eye was filmed in 1995 and starred Pierce Brosnan. Daniel Craig would later take over the role of James Bond in 2002, in the film "Die Another Day".');
+			
+			stop();
+			setTimeout(question1, 3000);
+		});
+		$("#answer2").click(function() {
+			wrongAnswers++;
+			$("#resultPage").html('WRONG! Golden Eye was filmed in 1995 and starred Pierce Brosnan. Daniel Craig would later take over the role of James Bond in 2002, in the film "Die Another Day".');
+			
+			stop();
+			setTimeout(question1, 3000);
+			
+		});
+		$("#answer3").click(function() {
+			correctAnswers++;
+			$("#resultPage").html('Correct! Golden Eye was filmed in 1995 and starred Pierce Brosnan. Daniel Craig would later take over the role of James Bond in 2002, in the film "Die Another Day".');
+			
+			stop();
+			setTimeout(question1, 3000);
+		});
+		$("#answer4").click(function() {
+			wrongAnswers++;
+			
+			$("#resultPage").html('WRONG! The film Golden Eye starred Pierce Brosnan. Daniel Craig would later take over the role of James Bond in 2002, in the film "Die Another Day".');
+			stop();
+			setTimeout(question1, 3000);
+			
+		});
+	
+		function decrement() {
+		
+		number--;
+		$("#secondsLeft").html(number + " seconds");
+		console.log(number)
+		
+		if (number == 0 ) {
+			stop();
+			$("#resultPage").html("OUT OF TIME! The answer was Indiana Jones and The last Crusade.");
+			
+			setTimeout(question1, 3000);
+			
+		}
+		
+	}
+}
+
+	function countdownVideo() {
+	$("#startGameButton").hide();
+		$("#triviaTitle").hide()
+		$(".jumbotron").hide();
+		$("#countdown").show();
+		$("#countdown").get(0).play();
+		$("#countdown").on("ended",function(){
+      		$("#countdown").hide();
+      		$(".jumbotron").show();
+      		question1()
+			});
+}
+
+	function stop() {
+
+		clearInterval(interval);
+	}
+
+
+
+
+
+	
+
+	
+
+
+	</script>

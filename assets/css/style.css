@@ -1,0 +1,91 @@
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.container-fluid {
+	background: url("../images/background.jpeg");
+	max-width: 1024px;
+	height: 768px;
+	
+}
+.centered-mainbox {
+	margin: 0 auto;
+	width:80%;
+	margin-top: 70px;
+
+}
+
+.jumbotron {
+	margin: 0 auto;
+	width: 85%;
+	height:460px;
+
+}
+
+@font-face {
+	font-family: filmFont;
+	src: url("../fonts/filmFont.otf")
+}
+
+@font-face {
+	font-family: quietStreets;
+	src: url("../fonts/quietStreets.ttf");
+}
+
+p {
+	font-size: 28px;
+	font-family: 'Special Elite', cursive;
+	letter-spacing: 2px;
+	font-weight: bold;
+
+}
+#answer1,
+#answer2,
+#answer3,
+#answer4 {
+	font-family: quietStreets;
+	margin: 10px 0px;
+	font-size: 18px;
+	font-weight: bold;
+	
+}
+
+button {
+	width: 70%;
+	padding: 5px 10px;
+	margin: 10px 10px;
+	letter-spacing: 2px;	
+}
+
+button:hover {
+	border: 1px solid red;
+    box-shadow: 0 0 10px red;
+    margin: 1px 1px;
+}
+
+button:focus {outline:0;}
+
+button:active {
+	border: blue;
+}
+
+#triviaTitle {
+	font-family: filmFont;
+	font-size: 96px;
+	line-height: 90px;
+}
+
+#startGameButton {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 70px;
+	padding: 20px 40px;
+}
+
+#countdown {
+	
+	height: 100%;
+	width: 100%;
+}
