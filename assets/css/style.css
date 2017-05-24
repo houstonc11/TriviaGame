@@ -17,9 +17,13 @@ body {
 
 }
 
+#underline {
+	border-bottom: 1px solid black;
+}
+
 .jumbotron {
 	margin: 0 auto;
-	width: 85%;
+	width: 90%;
 	height:460px;
 
 }
@@ -39,8 +43,14 @@ p {
 	font-family: 'Special Elite', cursive;
 	letter-spacing: 2px;
 	font-weight: bold;
-
 }
+
+#resultPage{
+	font-family: 'Special Elite', cursive;
+	font-size: 18px;
+}
+
+
 #answer1,
 #answer2,
 #answer3,
@@ -72,16 +82,25 @@ button:active {
 }
 
 #triviaTitle {
+
 	font-family: filmFont;
 	font-size: 96px;
 	line-height: 90px;
+	margin-bottom: 30px;
 }
 
 #startGameButton {
-	font-size: 20px;
+	font-size: 26px;
 	font-weight: bold;
-	margin-top: 70px;
+	margin-top: 50px;
 	padding: 20px 40px;
+}
+
+#startGameButton2 {
+	margin-top: 10px;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 10px 20px;
 }
 
 #countdown {
