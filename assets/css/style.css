@@ -1,110 +1,219 @@
 body {
-	width: 100%;
-	height: 100%;
-	margin: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 .container-fluid {
-	background: url("../images/background.jpeg");
-	max-width: 1024px;
-	height: 768px;
-	
+    background: url("../images/background.jpeg");
+    max-width: 1024px;
+    height: 768px;
 }
-.centered-mainbox {
-	margin: 0 auto;
-	width:80%;
-	margin-top: 70px;
 
+.centered-mainbox {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 70px;
 }
 
 #underline {
-	border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .jumbotron {
-	margin: 0 auto;
-	width: 90%;
-	height:460px;
-
+    margin: 0 auto;
+    width: 90%;
+    height: 460px;
 }
 
 @font-face {
-	font-family: filmFont;
-	src: url("../fonts/filmFont.otf")
+    font-family: filmFont;
+    src: url("../fonts/filmFont.otf")
 }
 
 @font-face {
-	font-family: quietStreets;
-	src: url("../fonts/quietStreets.ttf");
+    font-family: quietStreets;
+    src: url("../fonts/quietStreets.ttf");
 }
 
 p {
-	font-size: 28px;
-	font-family: 'Special Elite', cursive;
-	letter-spacing: 2px;
-	font-weight: bold;
+    font-size: 28px;
+    font-family: 'Special Elite', cursive;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
-#resultPage{
-	font-family: 'Special Elite', cursive;
-	font-size: 18px;
+#resultPage {
+    font-family: 'Special Elite', cursive;
+    font-size: 18px;
 }
-
 
 #answer1,
 #answer2,
 #answer3,
 #answer4 {
-	font-family: quietStreets;
-	margin: 10px 0px;
-	font-size: 18px;
-	font-weight: bold;
-	
+    font-family: quietStreets;
+    margin: 10px 0px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 button {
-	width: 70%;
-	padding: 5px 10px;
-	margin: 10px 10px;
-	letter-spacing: 2px;	
+    width: 70%;
+    padding: 5px 10px;
+    margin: 10px 10px;
+    letter-spacing: 2px;
 }
 
 button:hover {
-	border: 1px solid red;
+    border: 1px solid red;
     box-shadow: 0 0 10px red;
     margin: 1px 1px;
 }
 
-button:focus {outline:0;}
+button:focus {
+    outline: 0;
+}
 
 button:active {
-	border: blue;
+    border: blue;
 }
 
 #triviaTitle {
-
-	font-family: filmFont;
-	font-size: 96px;
-	line-height: 90px;
-	margin-bottom: 30px;
+    color: #222222;
+    font-family: filmFont;
+    font-size: 70px;
+    line-height: 55px;
+    margin-bottom: 30px;
+    margin-top: 0px;
 }
 
 #startGameButton {
-	font-size: 26px;
-	font-weight: bold;
-	margin-top: 50px;
-	padding: 20px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 5px 5px;
 }
 
 #startGameButton2 {
-	margin-top: 10px;
-	font-size: 26px;
-	font-weight: bold;
-	padding: 10px 20px;
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px 20px;
 }
 
 #countdown {
-	
-	height: 100%;
-	width: 100%;
+    height: 100%;
+    width: 100%;
 }
+
+#slideshow {
+    margin: 20px auto;
+    position: relative;
+    width: 220px;
+    height: 220px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.titleImage {
+    height: 200px;
+    width: 200px;
+}
+
+@import url('http://fonts.googleapis.com/css?family=Alegreya+Sans:300');
+body {
+    background: #000;
+}
+
+.shimmer {
+    /* styling stuff */
+    font-family: "Alegreya Sans";
+    font-weight: 300;
+    font-size: 3em;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.shimmer {
+    background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(.5, #fff));
+    background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(.5, #fff));
+    background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(.5, #fff));
+    -webkit-background-size: 125px 100%;
+    -moz-background-size: 125px 100%;
+    background-size: 125px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    -webkit-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+@-o-keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+@-ms-keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+

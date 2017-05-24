@@ -1,834 +1,126 @@
 <!DOCTYPE html>
 <html lang=en>
-	<head>
-		<title>Trivia Game</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Special+Elite" rel="stylesheet">
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	</head>
 
-	<body>
-		<div class="container-fluid">
-			<div class="centered-mainbox">
-			<video hidden id="countdown">
-								<source src="assets/movies/countdown.mp4" type="video/mp4">
-							</video>
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<div class="jumbotron well">
-							<h2 id="triviaTitle">
+<head>
+    <title>Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Special+Elite" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="centered-mainbox">
+            <video hidden id="countdown">
+                <source src="assets/movies/countdown.mp4" type="video/mp4">
+            </video>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="jumbotron well">
+                        <h2 id="triviaTitle" class="shimmer">
 								MOVIE TRIVIA
 							</h2>
-			
-							<button id="startGameButton" class="btn btn-danger btn-large">Start the Game!</button>
-
-							
-
-						<div id="questionPage">	
-							<div id="textTimeRemaining"></div>
-							<p id="secondsLeft"></p>
-							<p id="currentQuestion"></p>
-							<div class="answerButton" id="answer1"></div>
-							<div class="answerButton" id="answer2"></div>
-							<div class="answerButton" id="answer3"></div>
-							<div class="answerButton" id="answer4"></div>				
-							<div id="resultPage"></div>
-							<button id="startGameButton2" class="btn btn-danger btn-large">Play Again?</button>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
+                        <div id="imageHolder"></div>
+                        <div id="slideshow">
+                            <div>
+                                <img class="titleImage" src="assets/images/darthVader.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/braveheart.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/et.jpeg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/future.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/godfather.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/king.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/gladiator.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/gump.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/joker.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/matrix.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/oz.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/rocky.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/topgun.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/potter.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/hopkins.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/scarface.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/wallstreet.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/pulp.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/denzel.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/sparta.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/tramp.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/marvel.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/bond.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/indiana.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/shining.jpg">
+                            </div>
+                            <div>
+                                <img class="titleImage" src="assets/images/shawshank.jpg">
+                            </div>
+                        </div>
+                        <button id="startGameButton" class="btn btn-danger btn-large">Start the Game!</button>
+                        <div id="questionPage">
+                            <div id="textTimeRemaining"></div>
+                            <p id="secondsLeft"></p>
+                            <p id="currentQuestion"></p>
+                            <div class="answerButton" id="answer1"></div>
+                            <div class="answerButton" id="answer2"></div>
+                            <div class="answerButton" id="answer3"></div>
+                            <div class="answerButton" id="answer4"></div>
+                            <div id="resultPage"></div>
+                            <button id="startGameButton2" class="btn btn-danger btn-large">Play Again?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
-
-
-
-
-
-	<script type="text/javascript">
-newGame();
-	var indianaJones = new Audio("assets/sounds/indianaJones.mp3");
-	var bond = new Audio("assets/sounds/bond.mp3");
-	var missionImpossible = new Audio("assets/sounds/missionImpossible.mp3")
-	var cheering = new Audio("assets/sounds/cheering.mp3");
-
-	var applause = new Audio("assets/sounds/applause.mp3");	
-	var interval;
-	var number;
-	var correctAnswers = 0;
-	var wrongAnswers = 0;
-
-
-function newGame() {
-	
-	
-
-	
-
-	$("#startGameButton2").hide();
-
-
-
-	$("#startGameButton").on("click", function() {
-		
-		$("#startGameButton").hide();
-		$("#triviaTitle").hide()
-		$(".jumbotron").hide();
-		$("#countdown").show();
-		$("#countdown").get(0).play();
-		
-	});
-
-	$("#startGameButton2").on("click", function() {
-		
-		$("#startGameButton").hide();
-		$("#triviaTitle").hide()
-		$(".jumbotron").hide();
-		$("#countdown").show();
-		$("#countdown").get(0).play();
-		
-	});
-		
-$("#countdown").on("ended",function(){
-      	$("#countdown").hide();
-      	$(".jumbotron").show();
-
-      		question1();
-			});
-
-
-	function question1() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4, #startGameButton').unbind("click");
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-		
-		console.log(correctAnswers)
-
-		
-		
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("Which of these Indiana Jones films was the 3rd in the series?");
-		
-		$("#answer1").html("<button>" + "The Last Crusade" + "</button>");
-		$("#answer2").html("<button>" + "Raiders of the Lost Ark" + "</button>");
-		$("#answer3").html("<button>" + "Kingdom of the Crystal Skull" + "</button>");
-		$("#answer4").html("<button>" + "The Temple of Doom" + "</button>");
-
-		$("#answer1").click(function() {
-			indianaJones.play();
-			correctAnswers++;
-			$("#answer1").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "The Last Crusade" + "</button>");
-			$("#resultPage").html("That's Right!" + "<div>" + "FUN FACT:  Indiana Jones and The Temple of Doom created the PG-13 rating." + "</div>");
-			stop();
-			setTimeout(question2, 3000);
-			
-		});
-		$("#answer2").click(function() {
-			$("#answer2").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Raiders of the Lost Ark" + "</button>");
-			wrongAnswers++;
-			$("#resultPage").html("Wrong! The answer was The Last Crusade." + "<div>" + "FUN FACT:  Indiana Jones and The Temple of Doom created the PG-13 rating." + "</div>");
-			stop();
-			setTimeout(question2, 3000);
-		});
-		$("#answer3").click(function() {
-			
-			wrongAnswers++;
-			$("#answer3").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Kingdom of the Crystal Skull" + "</button>");
-			$("#resultPage").html("Wrong! The answer was The Last Crusade." + "<div>" + "FUN FACT:  Indiana Jones and The Temple of Doom created the PG-13 rating." + "</div>");
-			stop();
-			setTimeout(question2, 3000);
-		});
-		$("#answer4").click(function() {			
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "The Temple of Doom" + "</button>");
-			$("#resultPage").html("Wrong! The answer was The Last Crusade." + "<div>" + "FUN FACT:  Indiana Jones and The Temple of Doom created the PG-13 rating." + "</div>");
-			stop();
-			
-			setTimeout(question2, 3000);
-			
-		});
-
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(decrement)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was The Last Crusade." + "<div>" + "FUN FACT:  Indiana Jones and The Temple of Doom created the PG-13 rating." + "</div>");
-			
-			setTimeout(question2, 3000);
-			
-		}
-		
-	}
-
-}
-	
-	
-
-
-
-
-
-	function question2() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");
-		interval = setInterval(decrement, 1000);
-		$("#secondsLeft").html(number + " seconds");
-		
-		console.log(interval);
-
-
-		
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("What is the highest grossing film of all time?")
-		$("#answer1").html("<button>" + "Jurassic Park" + "</button>")
-		$("#answer2").html("<button>" + "Frozen" + "</button>")
-		$("#answer3").html("<button>" + "Avatar" + "</button>")
-		$("#answer4").html("<button>" + "Titanic" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Jurassic Park" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Avatar." + "<div>" + "FUN FACT: Avatar surpassed Titanic in 2009, pulling in $2.78 billion dollars at the box office." + "</div>");
-			
-			stop();
-			setTimeout(question3, 3000);
-		});
-		$("#answer2").click(function() {
-			wrongAnswers++;
-			$("#answer2").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Frozen" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Avatar." + "<div>" + "FUN FACT: Avatar surpassed Titanic in 2009, pulling in $2.78 billion dollars at the box office." + "</div>");
-			
-			stop();
-			setTimeout(question3, 3000);
-		});
-		$("#answer3").click(function() {
-			correctAnswers++;
-			cheering.play();
-			$("#answer3").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "Avatar" + "</button>");
-			$("#resultPage").html("CORRECT!" + "<div>" + "FUN FACT: Avatar surpassed Titanic in 2009, pulling in $2.78 billion dollars at the box office." + "</div>");
-			
-			stop();
-			setTimeout(question3, 3000);
-			
-		});
-		$("#answer4").click(function() {
-			
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Titanic" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Avatar." + "<div>" + "FUN FACT: Avatar surpassed Titanic in 2009, pulling in $2.78 billion dollars at the box office." + "</div>");
-			stop();
-			setTimeout(question3, 3000);
-			
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was Avatar." + "<div>" + "FUN FACT: Avatar surpassed Titanic in 2009, pulling in $2.78 billion dollars at the box office." + "</div>");
-			
-			setTimeout(question3, 3000);
-			
-		}
-		
-	}
-
-}
-
-function question3() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("Which of these James Bond films did NOT star Daniel Craig?")
-		$("#answer1").html("<button>" + "Casino Royale" + "</button>")
-		$("#answer2").html("<button>" + "Skyfall" + "</button>")
-		$("#answer3").html("<button>" + "Golden Eye" + "</button>")
-		$("#answer4").html("<button>" + "Quantum of Solace" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Casino Royale" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Golden Eye." + "<div>" + "FUN FACT: Ian Fleming wanted Bond's name to be as mundane as possible so he named him after ornithologist Dr. James Bond - lifted from a birdwatching book he had handy." + "</div>");
-			
-			stop();
-			setTimeout(question4, 3000);
-		});
-		$("#answer2").click(function() {
-			wrongAnswers++;
-			$("#answer2").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Skyfall" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Golden Eye." + "<div>" + "FUN FACT: Creator Ian Fleming wanted Bond's name to be as mundane as possible so he named him after ornithologist Dr. James Bond - lifted from a birdwatching book he had handy." + "</div>");
-			
-			stop();
-			setTimeout(question4, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			correctAnswers++;
-			bond.play();
-			$("#answer3").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "Golden Eye" + "</button>");
-			$("#resultPage").html("CORRECT!" + "<div>" + "FUN FACT: Ian Fleming wanted Bond's name to be as mundane as possible so he named him after ornithologist Dr. James Bond - lifted from a birdwatching book he had handy." + "</div>");
-			
-			stop();
-			setTimeout(question4, 3000);
-		});
-		$("#answer4").click(function() {
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Quantum of Solace" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Golden Eye." + "<div>" + "FUN FACT: Ian Fleming wanted Bond's name to be as mundane as possible so he named him after ornithologist Dr. James Bond - lifted from a birdwatching book he had handy." + "</div>");
-			stop();
-			setTimeout(question4, 3000);
-			
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was Golden Eye" + "<div>" + "FUN FACT: Ian Fleming wanted Bond's name to be mundane so he named him after ornithologist Dr. James Bond - lifted from a birdwatching book he had handy." + "</div>");
-			
-			setTimeout(question4, 3000);
-			
-		}
-		
-	}
-}
-
-function question4() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("In which of these Tom Cruise movies does he play the character Ethan Hunt?")
-		$("#answer1").html("<button>" + "Top Gun" + "</button>")
-		$("#answer2").html("<button>" + "Jerry McGuire" + "</button>")
-		$("#answer3").html("<button>" + "Edge of Tomorrow" + "</button>")
-		$("#answer4").html("<button>" + "Mission: Impossible" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Top Gun" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Mission: Impossible." + "<div>" + 'FUN FACT: Tom Cruise once failed an audition for the movie "Fame" because he was not "pretty" enough.' + "</div>");
-			
-			stop();
-			setTimeout(question5, 3000);
-		});
-		$("#answer2").click(function() {
-			wrongAnswers++;
-			$("#answer2").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Jerry McGuire" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Mission: Impossible." + "<div>" + 'FUN FACT: Tom Cruise once failed an audition for the movie "Fame" because he was not "pretty" enough.' + "</div>");
-			
-			stop();
-			setTimeout(question5, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			wrongAnswers++;
-			$("#answer3").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Edge of Tomorrow" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Mission: Impossible." + "<div>" + 'FUN FACT: Tom Cruise once failed an audition for the movie "Fame" because he was not "pretty" enough.' + "</div>");
-			
-			stop();
-			setTimeout(question5, 3000);
-		});
-		$("#answer4").click(function() {
-			correctAnswers++;
-			missionImpossible.play();
-			stop();
-			$("#answer4").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "Mission: Impossible" + "</button>");
-			$("#resultPage").html("CORRECT!" + "<div>" + 'FUN FACT: Tom Cruise once failed an audition for the movie "Fame" because he was not "pretty" enough.' + "</div>");
-			setTimeout(question5, 3000);
-			
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was Mission: Impossible." + "<div>" + 'FUN FACT: Tom Cruise once failed an audition for the movie "Fame" because he was not "pretty" enough.' + "</div>");
-			
-			setTimeout(question5, 3000);
-			
-		}
-		
-	}
-}
-
-function question5() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("Which of these in NOT a droid in Star Wars?")
-		$("#answer1").html("<button>" + "R2-D2" + "</button>")
-		$("#answer2").html("<button>" + "IR-98" + "</button>")
-		$("#answer3").html("<button>" + "BB-8" + "</button>")
-		$("#answer4").html("<button>" + "C-3P0" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "R2-D2" + "</button>");
-			$("#resultPage").html("Wrong! The answer was IR-98" + "<div>" + "FUN FACT: Steven Spielberg made a bet with George Lucas for a percentage of the Star Wars films, which has earned him millions of dollars since the wager." + "</div>");
-			
-			stop();
-			setTimeout(question6, 3000);
-		});
-		$("#answer2").click(function() {
-			correctAnswers++;
-			applause.play();
-			$("#answer2").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "IR-98" + "</button>");
-			$("#resultPage").html("Correct!" + "<div>" + "FUN FACT: Steven Spielberg made a bet with George Lucas for a percentage of the Star Wars films, which has earned him millions of dollars since the wager." + "</div>");
-			
-			stop();
-			setTimeout(question6, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			wrongAnswers++;
-			$("#answer3").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "BB-8" + "</button>");
-			$("#resultPage").html("Wrong! The answer was IR-98" + "<div>" + "FUN FACT: Steven Spielberg made a bet with George Lucas for a percentage of the Star Wars films, which has earned him millions of dollars since the wager." + "</div>");
-			
-			stop();
-			setTimeout(question6, 3000);
-		});
-		$("#answer4").click(function() {
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "C-3P0" + "</button>");
-			$("#resultPage").html("Wrong! The answer was IR-98" + "<div>" + "FUN FACT: Steven Spielberg made a bet with George Lucas for a percentage of the Star Wars films, which has earned him millions of dollars since the wager." + "</div>");
-			stop();
-			setTimeout(question7, 3000);
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was IR-98" + "<div>" + "FUN FACT: Steven Spielberg made a bet with George Lucas for a percentage of the Star Wars films, which has earned him millions of dollars since the wager." + "</div>");
-			
-			setTimeout(question6, 3000);
-			
-		}
-		
-	}
-}
-
-function question6() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("In the Disney movie Aladdin, what do Aladdin and Abu give the poor children to eat?")
-		$("#answer1").html("<button>" + "Apple" + "</button>")
-		$("#answer2").html("<button>" + "Bread" + "</button>")
-		$("#answer3").html("<button>" + "Cheese" + "</button>")
-		$("#answer4").html("<button>" + "Banana" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Apple" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Bread" + "<div>" + "FUN FACT: Animators orginally modeled Aladdin after Michael J. Fox, but found the end result to be too cutesy and changed it." + "</div>");
-			
-			stop();
-			setTimeout(question7, 3000);
-		});
-		$("#answer2").click(function() {
-			correctAnswers++;
-			cheering.play();
-			$("#resultPage").html("Correct!" + "<div>" + "FUN FACT: Animators orginally modeled Aladdin after Michael J. Fox, but found the end result to be too cutesy and changed it." + "</div>");
-			$("#answer2").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "Bread" + "</button>");
-			stop();
-			setTimeout(question7, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			wrongAnswers++;
-			$("#answer3").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Cheese" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Bread" + "<div>" + "FUN FACT: Animators orginally modeled Aladdin after Michael J. Fox, but found the end result to be too cutesy and changed it." + "</div>");
-			
-			stop();
-			setTimeout(question7, 3000);
-		});
-		$("#answer4").click(function() {
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Banana" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Bread" + "<div>" + "FUN FACT: Animators orginally modeled Aladdin after Michael J. Fox, but found the end result to be too cutesy and changed it." + "</div>");
-			
-			stop();
-			setTimeout(question7, 3000);
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was Bread" + "<div>" + "INCORRECT! The answer was Bread" + "<div>" + "FUN FACT: Animators orginally modeled Aladdin after Michael J. Fox, but found the end result to be too cutesy and changed it." + "</div>");
-			
-			setTimeout(question7, 3000);
-			
-		}
-		
-	}
-}
-
-function question7() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("Which actor has starred in both X-Men and Star Trek films?")
-		$("#answer1").html("<button>" + "Ian McKellan" + "</button>")
-		$("#answer2").html("<button>" + "Zoe Saldana" + "</button>")
-		$("#answer3").html("<button>" + "Michael Fassbender" + "</button>")
-		$("#answer4").html("<button>" + "Patrick Stewart" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Ian McKellan" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Patrick Stewart" + "<div>" + "FUN FACT: Ian McKellen is Patrick Stewart's best friend and performed Stewart's wedding ceremony." + "</div>");
-			
-			stop();
-			setTimeout(question8, 3000);
-		});
-		$("#answer2").click(function() {
-			wrongAnswers++;
-			$("#answer2").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Zoe Saldana" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Patrick Stewart" + "<div>" + "FUN FACT: Ian McKellen is Patrick Stewart's best friend and performed Stewart's wedding ceremony." + "</div>");
-			
-			stop();
-			setTimeout(question8, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			wrongAnswers++;
-			$("#answer3").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Michael Fassbender" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Patrick Stewart" + "<div>" + "FUN FACT: Ian McKellen is Patrick Stewart's best friend and performed Stewart's wedding ceremony." + "</div>");
-			
-			stop();
-			setTimeout(question8, 3000);
-		});
-		$("#answer4").click(function() {
-			correctAnswers++;
-			applause.play();
-			$("#answer4").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "Patrick Stewart" + "</button>");
-			$("#resultPage").html("CORRECT!" + "<div>" + "FUN FACT: Ian McKellen is Patrick Stewart's best friend and performed Stewart's wedding ceremony." + "</div>");
-			
-			stop();
-			setTimeout(question8, 3000);
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was Patrick Stewart" + "<div>" + "FUN FACT: Ian McKellen is Patrick Stewart's best friend and performed Stewart's wedding ceremony." + "</div>");
-			
-			setTimeout(question8, 3000);
-			
-		}
-		
-	}
-}
-
-function question8() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("Who was the highest paid actress in both 2015 and 2016?")
-		$("#answer1").html("<button>" + "Jennifer Lawrence" + "</button>")
-		$("#answer2").html("<button>" + "Amy Adams" + "</button>")
-		$("#answer3").html("<button>" + "Kristen Bell" + "</button>")
-		$("#answer4").html("<button>" + "Charlize Theron" + "</button>")
-
-		$("#answer1").click(function() {
-			correctAnswers++;
-			cheering.play();
-			$("#resultPage").html("CORRECT!" + "<div>" + "FUN FACT: Jennifer Lawrence made $46 million in 2016, which was more than these other 3 actresses combined." + "</div>");
-			$("#answer1").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "Jennifer Lawrence" + "</button>");
-			stop();
-			setTimeout(question9, 3000);
-		});
-		$("#answer2").click(function() {
-			wrongAnswers++;
-			$("#answer2").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Amy Adams" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Jennifer Lawrence" + "<div>" + "FUN FACT: Jennifer Lawrence made $46 million in 2016, which was more than these other 3 actresses combined." + "</div>");
-			
-			stop();
-			setTimeout(question9, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			wrongAnswers++;
-			$("#answer3").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Kristen Bell" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Jennifer Lawrence" + "<div>" + "FUN FACT: Jennifer Lawrence made $46 million in 2016, which was more than these other 3 actresses combined." + "</div>");
-			
-			stop();
-			setTimeout(question9, 3000);
-		});
-		$("#answer4").click(function() {
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Charlize Theron" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was Jennifer Lawrence" + "<div>" + "FUN FACT: Jennifer Lawrence made $46 million in 2016, which was more than these other 3 actresses combined." + "</div>");
-			
-			stop();
-			setTimeout(question9, 3000);
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was Jennifer Lawrence" + "<div>" + "FUN FACT: Jennifer Lawrence made $46 million in 2016, which was more than these other 3 actresses combined." + "</div>");
-			
-			setTimeout(question9, 3000);
-			
-		}
-		
-	}
-}
-
-function question9() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html('This quote comes from what movie?: "If I\'m not back in five minutes... just wait longer."')
-		$("#answer1").html("<button>" + "Dumb and Dumber" + "</button>")
-		$("#answer2").html("<button>" + "Bill and Ted's Excellent Adventure" + "</button>")
-		$("#answer3").html("<button>" + "Ace Ventura: Pet Detective" + "</button>")
-		$("#answer4").html("<button>" + "There's Something About Mary" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Dumb and Dumber" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Ace Ventura: Pet Detective" + "<div>" + "FUN FACT: Jim Carrey wrote letters to Tupac Shakur when Tupac was in prison to help the rapper laugh and smile while behind bars." + "</div>");
-			
-			stop();
-			setTimeout(question10, 3000);
-		});
-		$("#answer2").click(function() {
-			wrongAnswers++;
-			$("#answer2").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Bill and Ted's Excellent Adventure" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Ace Ventura: Pet Detective" + "<div>" + "FUN FACT: Jim Carrey wrote letters to Tupac Shakur when Tupac was in prison to help the rapper laugh and smile while behind bars." + "</div>");
-			
-			stop();
-			setTimeout(question10, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			correctAnswers++;
-			applause.play();
-			$("#resultPage").html("CORRECT!" + "<div>" + "FUN FACT: Jim Carrey wrote letters to Tupac Shakur when Tupac was in prison to help the rapper laugh and smile while behind bars." + "</div>");
-			$("#answer3").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "Ace Ventura: Pet Detective" + "</button>");
-			stop();
-			setTimeout(question10, 3000);
-		});
-		$("#answer4").click(function() {
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "There's Something About Mary" + "</button>");
-			$("#resultPage").html("Wrong! The answer was Ace Ventura: Pet Detective" + "<div>" + "FUN FACT: Jim Carrey wrote letters to Tupac Shakur when Tupac was in prison to help the rapper laugh and smile while behind bars." + "</div>");
-			
-			stop();
-			setTimeout(question10, 3000);
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was Ace Ventura: Pet Detective" + "<div>" + "FUN FACT: Jim Carrey wrote letters to Tupac Shakur when Tupac was in prison to help the rapper laugh and smile while behind bars." + "</div>");
-			
-			setTimeout(question10, 3000);
-			
-		}
-		
-	}
-}
-
-function question10() {
-		number = 10;
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-		$("#resultPage").html("");	
-		$("#secondsLeft").html(number + " seconds");
-		interval = setInterval(decrement, 1000);
-				
-		$("#textTimeRemaining").html("Time Remaining: ");
-		$("#currentQuestion").html("Fill in the blank from the movie The Princess Bride: HELLO! MY NAME IS INIGO MONTOYA! YOU KILLED MY " + "<span id=underline>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>" + " , PREPARE TO DIE!")
-		$("#answer1").html("<button>" + "MOTHER" + "</button>")
-		$("#answer2").html("<button>" + "FATHER" + "</button>")
-		$("#answer3").html("<button>" + "WIFE" + "</button>")
-		$("#answer4").html("<button>" + "PUPPY" + "</button>")
-
-		$("#answer1").click(function() {
-			wrongAnswers++;
-			$("#answer1").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "Mother" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was FATHER" + "<div>" + "FUN FACT: Over 500 women for the role of Buttercup, including Courtney Cox, Meg Ryan, Uma Thurman, and Whoopie Goldberg." + "</div>");
-			
-			stop();
-			setTimeout(endPage, 3000);
-		});
-		$("#answer2").click(function() {
-			correctAnswers++;
-			cheering.play();
-			$("#resultPage").html("CORRECT!" + "<div>" + "FUN FACT: Over 500 women for the role of Buttercup, including Courtney Cox, Meg Ryan, Uma Thurman, and Whoopie Goldberg." + "</div>");
-			$("#answer2").html("<button style=background:limegreen>" + "<span>&#10004 </span>" + "FATHER" + "</button>");
-			stop();
-			setTimeout(endPage, 3000);
-			
-		});
-		$("#answer3").click(function() {
-			wrongAnswers++;
-			$("#answer3").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "WIFE" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was FATHER" + "<div>" + "FUN FACT: Over 500 women for the role of Buttercup, including Courtney Cox, Meg Ryan, Uma Thurman, and Whoopie Goldberg." + "</div>");
-			
-			stop();
-			setTimeout(endPage, 3000);
-		});
-		$("#answer4").click(function() {
-			wrongAnswers++;
-			$("#answer4").html("<button style=background:crimson>" + "<span>&#10008 </span>" + "PUPPY" + "</button>");
-			$("#resultPage").html("INCORRECT! The answer was FATHER" + "<div>" + "FUN FACT: Over 500 women for the role of Buttercup, including Courtney Cox, Meg Ryan, Uma Thurman, and Whoopie Goldberg." + "</div>");
-			
-			stop();
-			setTimeout(endPage, 3000);
-		});
-	
-		function decrement() {
-		
-		number--;
-		$("#secondsLeft").html(number + " seconds");
-		console.log(number)
-		
-		if (number == 0 ) {
-			stop();
-			$("#resultPage").html("OUT OF TIME! The answer was FATHER" + "<div>" + "FUN FACT: Over 500 women for the role of Buttercup, including Courtney Cox, Meg Ryan,  and Whoopie Goldberg." + "</div>");
-			
-			setTimeout(endPage, 3000);
-			
-		}
-		
-	}
-}
-
-}
-
-function endPage() {
-	stop();
-	$("#textTimeRemaining").hide();
-	$("#secondsLeft").hide();
-	$("#triviaTitle").show();
-	$("#currentQuestion").html("RESULTS:")
-	$("#answer1").html("Correct Answers: " + correctAnswers)
-	$("#answer2").html("Incorrect Answers: " + wrongAnswers)
-	$("#answer3").hide();
-	$("#answer4").hide();
-	$("#resultPage").hide();
-	$("#startGameButton2").show();
-	$("#startGameButton2").click(function(){
-		correctAnswers = 0
-		wrongAnswers = 0
-		$("#textTimeRemaining").show();
-		$("#secondsLeft").show();
-		$("#triviaTitle").hide();
-		$("#answer3").show();
-		$("#answer4").show();
-		$("#resultPage").show();
-		$("#resultPage").html("");
-		$("#startGameButton2").hide();
-		$('#answer1, #answer2, #answer3, #answer4').unbind("click");
-	})
-}
-
-
-	function countdownVideo() {
-	$("#startGameButton").hide();
-		$("#triviaTitle").hide()
-		$(".jumbotron").hide();
-		$("#countdown").show();
-		$("#countdown").get(0).play();
-		$("#countdown").on("ended",function(){
-      		$("#countdown").hide();
-      		$(".jumbotron").show();
-      		question1()
-			});
-
-
-}
-
-	function stop() {
-
-		clearInterval(interval);
-	}
-
-
-
-
-
-	
-
-	
-
-
-	</script>
+<script type="text/javascript" src="assets/javascript/app.js"</script>
+<script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
