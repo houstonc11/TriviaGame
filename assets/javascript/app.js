@@ -31,7 +31,7 @@ $(document).ready(function() {
             .fadeIn(1000)
             .end()
             .appendTo('#slideshow');
-    }, 2500);
+    }, 2000);
 
     function newGame() {
 
