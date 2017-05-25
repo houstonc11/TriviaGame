@@ -31,7 +31,7 @@ $(document).ready(function() {
             .fadeIn(1000)
             .end()
             .appendTo('#slideshow');
-    }, 4000);
+    }, 3000);
 
     function newGame() {
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
             $("#countdown").get(0).play();
         });
 
-        $("#countdown").on("ended", function() {
+        $("#countdown").on("ended", function() {           
             $("#countdown").hide();
             $(".jumbotron").show();
             question1();
